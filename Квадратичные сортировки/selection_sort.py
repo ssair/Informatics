@@ -1,6 +1,5 @@
 # В этой реализации создается новый список
 # и изменяется исходный
-# Задание: отсортировать исходный список на месте
 
 def find_smallest(arr):
     """
@@ -16,8 +15,7 @@ def find_smallest(arr):
             smallest_index = i
     return smallest_index
 
-
-def selectionSort(arr):
+def selection_sort(arr):
     """
     Sort array
     """
@@ -29,4 +27,23 @@ def selectionSort(arr):
         arr.pop(smallest)
     return new_arr
 
-print(selectionSort([5, 3, 6, 2, 14]))
+# print(selection_sort([5, 3, 6, 2, 14]))
+
+
+# Задание: отсортировать исходный список на месте
+def selection_sort_1(nums):
+    # Значение i соответствует кол-ву отсортированных значений
+    for i in range(len(nums)):
+        # Исходно считаем наименьшим первый элемент
+        lowest_value_index = i
+        # Этот цикл перебирает несортированные элементы
+        for j in range(i + 1, len(nums)):
+            if nums[j] < nums[lowest_value_index]:
+                lowest_value_index = j
+        # Самый маленький элемент меняем с первым в списке
+        nums[i], nums[lowest_value_index] = nums[lowest_value_index], nums[i]
+
+
+nums = [5, 3, 6, 2, 14]
+selection_sort_1(nums)
+print(nums)
