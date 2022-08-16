@@ -31,4 +31,4 @@ def generate_number(N:int, M:int, prefix=None):
 generate_bin(5)
 
 # для произвольной СС
-generate_number(3, 2)
+generate_number(4, 3)
