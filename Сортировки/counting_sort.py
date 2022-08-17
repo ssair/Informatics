@@ -1,21 +1,19 @@
 from random import randint
 
 
-def counting_sort(array, mn, mx):
-    count = [0] * len(array)
+def counting_sort(lst, min_nums, max_nums):
+    count_lst = [0] * len(lst)
+    for i in lst:
+        count_lst[i] += 1
+    result_lst = []
 
-    for i in array:
-        count[i] += 1
+    for j in range(min_nums, max_nums + 1):
+        result_lst += [j] * count_lst[j]
 
-    result = []
-
-    for j in range(mn, mx + 1):
-        result += [j] * count[j]
-
-    return result
+    return result_lst
 
 
-a = [randint(0, 20) for i in range(21)]
+a = [randint(0, 5) for i in range(21)]
 print(*a)
 b = counting_sort(a, 0, 20)
 print(*b)
