@@ -1,4 +1,4 @@
-def binary_search(lst, item):
+def binary_search(lst: list, item: int):
     """
     Бинарный поиск элемента в списке
     Возвращает индекс элемента (первого, если их несколько)
