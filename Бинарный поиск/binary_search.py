@@ -1,28 +1,32 @@
-def binary_search(list, item):
-  # low and high keep track of which part of the list you'll search in.
+def binary_search(lst, item):
+  """
+  Бинарный поиск элемента в списке
+  Возвращает индекс элемента (первого, если их несколько)
+  и None, если его в списке нет
+  """
+  # Нижняя и верхняя граница в поиске
   low = 0
-  high = len(list) - 1
+  high = len(lst) - 1
 
-  # While you haven't narrowed it down to one element ...
+  # Пока вы не сузили список до одного элемента ...
   while low <= high:
-    # ... check the middle element
+    # ... вычисляем индекс среднего элемента
     mid = (low + high) // 2
-    guess = list[mid]
-    # Found the item.
+    guess = lst[mid]
+    # Если элемент найден ...
     if guess == item:
       return mid
-    # The guess was too high.
+    # Если элемент элемент больше среднего
     if guess > item:
       high = mid - 1
-    # The guess was too low.
+    # Если элемент элемент меньше среднего
     else:
       low = mid + 1
 
-  # Item doesn't exist
+  # Элемент не найден
   return None
 
 my_list = [1, 3, 5, 7, 9]
 print(binary_search(my_list, 3)) # => 1
 
-# 'None' means nil in Python. We use to indicate that the item wasn't found.
 print(binary_search(my_list, -1)) # => None
