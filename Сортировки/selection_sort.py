@@ -1,50 +1,59 @@
-# Сортировка выбором
-# В этой реализации создается новый список
-# и изменяется исходный
+from random import randint
 
-def find_smallest(arr):
+
+def find_smallest(lst: list):
     """
-    Finds the smallest value in an array
+    Находит наименьший элемент в списке
     """
     # Stores the smallest value
-    smallest = arr[0]
+    smallest = lst[0]
     # Stores the index of the smallest value
     smallest_index = 0
-    for i in range(1, len(arr)):
-        if arr[i] < smallest:
-            smallest = arr[i]
+    for i in range(1, len(lst)):
+        if lst[i] < smallest:
+            smallest = lst[i]
             smallest_index = i
     return smallest_index
 
-def selection_sort(arr):
-    """
-    Sort array
-    """
-    new_arr = [0]*len(arr)
-    for i in range(len(arr)):
-        # Finds the smallest element in the array and adds it to the new array
-        smallest = find_smallest(arr)
-        new_arr[i] = arr[smallest]
-        arr.pop(smallest)
-    return new_arr
 
-# print(selection_sort([5, 3, 6, 2, 14]))
+def selection_sort(lst: list):
+    """
+    Сортировка выбором
+    В этой реализации создается новый список
+    и изменяется исходный
+    """
+    new_lst = [0]*len(lst)
+    for i in range(len(lst)):
+        smallest = find_smallest(lst)
+        new_lst[i] = lst[smallest]
+        lst.pop(smallest)
+    return new_lst
+
+
+random_list_of_nums = [randint(0, 20) for i in range(20)]
+print(random_list_of_nums)
+print(selection_sort(random_list_of_nums))
 
 
 # Задание: отсортировать исходный список на месте
-def selection_sort_1(nums):
+def selection_sort_1(lst: list):
+    """
+    Сортировка выбором
+    Список сортируется на месте
+    """
     # Значение i соответствует кол-ву отсортированных значений
-    for i in range(len(nums)):
+    for i in range(len(lst)):
         # Исходно считаем наименьшим первый элемент
         lowest_value_index = i
         # Этот цикл перебирает несортированные элементы
-        for j in range(i + 1, len(nums)):
-            if nums[j] < nums[lowest_value_index]:
+        for j in range(i + 1, len(lst)):
+            if lst[j] < lst[lowest_value_index]:
                 lowest_value_index = j
         # Самый маленький элемент меняем с первым в списке
-        nums[i], nums[lowest_value_index] = nums[lowest_value_index], nums[i]
+        lst[i], lst[lowest_value_index] = lst[lowest_value_index], lst[i]
 
 
-nums = [5, 3, 6, 2, 14]
-selection_sort_1(nums)
-print(nums)
+random_list_of_nums = [randint(0, 20) for j in range(20)]
+print(random_list_of_nums)
+selection_sort_1(random_list_of_nums)
+print(random_list_of_nums)
