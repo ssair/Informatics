@@ -44,6 +44,7 @@ def merge_sort(lst: list):
     for i in range(len(lst)):
         lst[i] = lst_c[i]
 
+
 a = [randint(0, 20) for i in range(20)]
 print(*a)
 merge_sort(a)
