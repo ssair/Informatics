@@ -1,29 +1,29 @@
-def generate_bin(M:int, prefix=""):
+def generate_bin(length_bin: int, prefix=""):
     """
         Генерирует все числа (с лидирующими незначащами нулями)
         в 2-ичной системе счисления
-        длины M
+        длины length_bin
         """
-    if M == 0:
+    if length_bin == 0:
         print(prefix)
         return
-    generate_bin(M-1, prefix + "0")
-    generate_bin(M-1, prefix + "1")
+    generate_bin(length_bin - 1, prefix + "0")
+    generate_bin(length_bin - 1, prefix + "1")
 
 
-def generate_number(N:int, M:int, prefix=None):
+def generate_number(number_system: int, length_number: int, prefix=None):
     """
     Генерирует все числа (с лидирующими незначащами нулями)
-    в N-ричной системе счисления (N <= 10)
-    длины M
+    в number_system-ричной системе счисления (number_system <= 10)
+    длины length_number
     """
     prefix = prefix or []
-    if M == 0:
+    if length_number == 0:
         print(*prefix, sep="")
         return
-    for digit in range(N):
+    for digit in range(number_system):
         prefix.append(digit)
-        generate_number(N, M-1, prefix)
+        generate_number(number_system, length_number - 1, prefix)
         prefix.pop()
 
 
