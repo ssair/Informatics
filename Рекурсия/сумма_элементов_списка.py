@@ -9,5 +9,5 @@ def sum_list(lst: list):
         return lst[0] + sum_list(lst[1:])   # или lst.pop(0) + sum_list(lst)
 
 
-a = [1, 2, 3]
+a = [2, 4, 6]
 print(sum_list(a))
