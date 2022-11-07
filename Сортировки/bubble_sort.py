@@ -1,6 +1,5 @@
 from random import randint
 
-
 def bubble_sort(lst: list):
     """
     Сортировка методом пузырька
