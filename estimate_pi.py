@@ -14,7 +14,8 @@ def estimate_pi(n):
 
     return 4 * num_point_circle/num_point_total
 
+
 n = 10000000 #общее количество точек (чем больше точек, тем лучше точность)
-pi =  estimate_pi(n)
+pi = estimate_pi(n)
 
 print(pi)

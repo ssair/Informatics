@@ -7,7 +7,7 @@ with open("test.txt", "w") as file:
 
 lines = ["first", "second", "third"]
 with open("test.txt", "w") as file:
-    for  line in lines:
+    for line in lines:
         file.write(line + '\n')
 
 with open("test.txt", "r") as file:
