@@ -13,3 +13,8 @@ with open("test.txt", "w") as file:
 with open("test.txt", "r") as file:
     for line in file:
         print(line)
+
+file = open("test.txt", "r")
+a = file.readlines()
+file.close()
+print(a)
