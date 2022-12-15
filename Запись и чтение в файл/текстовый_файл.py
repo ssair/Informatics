@@ -18,3 +18,9 @@ file = open("test.txt", "r")
 a = file.readlines()
 file.close()
 print(a)
+
+
+a[0] = a[0][:-1]
+print(a[0])
+if 'first' in a:
+    print('Jr')
